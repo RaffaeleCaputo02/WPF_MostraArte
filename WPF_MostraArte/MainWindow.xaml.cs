@@ -25,7 +25,7 @@ namespace WPF_MostraArte
         List <Opera> Opere;
         int cnt;
         int index;
-        string path;
+        
         
         public MainWindow()
         {
@@ -44,6 +44,7 @@ namespace WPF_MostraArte
             XDocument xmlDoc = XDocument.Load(path);
             XElement xmlopere = xmlDoc.Element("opere");
             var xmlopera = xmlopere.Elements("opera");
+
 
             foreach(var item in xmlopera)
             {
@@ -125,12 +126,13 @@ namespace WPF_MostraArte
             {
                 var imgBrush = new ImageBrush();
 
-                imgBrush.ImageSource = new BitmapImage(new Uri(@$"{lst_Risultato.SelectedItem.ToString()}.jpg", UriKind.Relative));
+                imgBrush.ImageSource = new BitmapImage(new Uri(@$"{lst_Risultato.SelectedItem.ToString().Replace("'","")}.jpg", UriKind.Relative));
                 grd_Opera.Background = imgBrush;
 
                 lst_Informazioni.Items.Clear();
                 lst_Informazioni.Visibility = Visibility.Visible;
                 foreach (var item in Opere)
+
                 {
                     if (lst_Risultato.SelectedItem.ToString() == item.nome)
                     {
@@ -146,10 +148,28 @@ namespace WPF_MostraArte
             catch
             {
                 MessageBox.Show("Seleziona l'opera");
+
+
             }
             
                 
             
+        }
+
+        private void btn_Carica_Click(object sender, RoutedEventArgs e)
+        {
+            lst_Risultato.Items.Clear();
+            txt_Nome.Text = " ";
+            lbl_Risultato.Visibility = Visibility.Visible;
+            lbl_Testo.Visibility = Visibility.Visible;
+            btn_Visualizza.Visibility = Visibility.Visible;
+            cnt = 0;
+            foreach(var item in Opere)
+            {
+                lst_Risultato.Items.Add(item.nome);
+                cnt++;
+            }
+            lbl_Risultato.Content = $"{cnt} risultati";
         }
     }
 }

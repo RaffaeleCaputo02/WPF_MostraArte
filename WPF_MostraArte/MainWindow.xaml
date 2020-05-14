@@ -8,14 +8,15 @@
         Title="MainWindow" Height="730" Width="1066">
     <Grid Height="714" Background="#FFB6B2F9">
         <Label x:Name="lbl_Nome" Content="Inserisci il nome dell'opera" HorizontalAlignment="Left" Height="56" Margin="76,10,0,0" VerticalAlignment="Top" Width="268" FontSize="20"/>
-        <TextBox x:Name="txt_Nome"  HorizontalAlignment="Left" Margin="60,66,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="46" TextChanged="txt_Nome_TextChanged" FontSize="20"/>
-        <Button x:Name="btn_Cerca" Content="Cerca" HorizontalAlignment="Left" Height="62" Margin="90,117,0,0" VerticalAlignment="Top" Width="240" FontSize="20" Click="btn_Cerca_Click"/>
-        <ListBox x:Name="lst_Risultato" Margin="47,184,681,272" FontSize="20"/>
+        <TextBox x:Name="txt_Nome"  HorizontalAlignment="Left" Margin="54,66,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="46" TextChanged="txt_Nome_TextChanged" FontSize="20"/>
+        <Button x:Name="btn_Cerca" Content="Cerca" HorizontalAlignment="Left" Height="62" Margin="13,117,0,0" VerticalAlignment="Top" Width="177" FontSize="20" Click="btn_Cerca_Click"/>
+        <ListBox x:Name="lst_Risultato" Margin="47,190,681,266" FontSize="20"/>
         <Label x:Name="lbl_Testo" Content="Seleziona l'opera di cui visionare le informazioni" HorizontalAlignment="Left" Height="47" Margin="10,503,0,0" VerticalAlignment="Top" Width="438" FontSize="20"/>
         <Label x:Name="lbl_Risultato" Content="" HorizontalAlignment="Left" Margin="13,447,0,0" VerticalAlignment="Top" Width="394" Height="35" FontSize="20"/>
         <Button x:Name="btn_Visualizza" Content="Visualizza" HorizontalAlignment="Left" Margin="90,574,0,0" VerticalAlignment="Top" Height="72" Width="240" FontSize="20" Click="btn_Visualizza_Click"/>
         <Grid x:Name="grd_Opera" HorizontalAlignment="Left" Height="247" Margin="533,66,0,0" VerticalAlignment="Top" Width="418"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="1320,241,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lst_Informazioni" HorizontalAlignment="Left" Height="253" Margin="505,357,0,0" VerticalAlignment="Top" Width="474" FontSize="20"/>
+        <Button x:Name="btn_Carica" Content="Carica Lista" HorizontalAlignment="Left" Margin="229,117,0,0" VerticalAlignment="Top" Height="62" Width="194" FontSize="20" Click="btn_Carica_Click"/>
     </Grid>
 </Window>
